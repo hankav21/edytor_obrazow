@@ -45,7 +45,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-
+    int zm = 0;
     QWidget okno_okolozapisu;
     menu_odczytu_i_zapisu *widget_okolozapisu;
 
