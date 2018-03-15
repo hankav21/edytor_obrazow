@@ -6,9 +6,27 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>290</width>
+    <height>340</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>290</width>
+    <height>340</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>290</width>
+    <height>340</height>
+   </size>
   </property>
   <property name="floating">
    <bool>true</bool>
@@ -23,18 +41,18 @@
    <string>Sobel</string>
   </property>
   <widget class="QWidget" name="dockWidgetContents">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="pushButton_315">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>60</width>
-      <height>60</height>
+      <width>90</width>
+      <height>90</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>20</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -42,19 +60,28 @@
     <property name="text">
      <string>315°</string>
     </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>true</bool>
+    </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="pushButton_270">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>100</x>
       <y>10</y>
-      <width>60</width>
-      <height>60</height>
+      <width>90</width>
+      <height>90</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>20</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -62,19 +89,28 @@
     <property name="text">
      <string>270°</string>
     </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>true</bool>
+    </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="pushButton_225">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>190</x>
       <y>10</y>
-      <width>60</width>
-      <height>60</height>
+      <width>90</width>
+      <height>90</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>20</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -82,14 +118,23 @@
     <property name="text">
      <string>225°</string>
     </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>true</bool>
+    </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="pushButton_0">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>70</y>
-      <width>60</width>
-      <height>60</height>
+      <y>100</y>
+      <width>90</width>
+      <height>90</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -100,7 +145,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>20</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -108,14 +153,29 @@
     <property name="text">
      <string>0°</string>
     </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>true</bool>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="pushButton_45">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>130</y>
-      <width>60</width>
-      <height>60</height>
+      <y>190</y>
+      <width>90</width>
+      <height>90</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -126,7 +186,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>20</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -134,14 +194,35 @@
     <property name="text">
      <string>45°</string>
     </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>true</bool>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="pushButton_90">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>130</y>
-      <width>60</width>
-      <height>60</height>
+      <x>100</x>
+      <y>190</y>
+      <width>90</width>
+      <height>90</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -152,7 +233,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>20</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -160,14 +241,23 @@
     <property name="text">
      <string>90°</string>
     </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>true</bool>
+    </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_7">
+   <widget class="QPushButton" name="pushButton_135">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>130</y>
-      <width>60</width>
-      <height>60</height>
+      <x>190</x>
+      <y>190</y>
+      <width>90</width>
+      <height>90</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -178,7 +268,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>20</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -186,14 +276,23 @@
     <property name="text">
      <string>135°</string>
     </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>true</bool>
+    </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_8">
+   <widget class="QPushButton" name="pushButton_180">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>70</y>
-      <width>60</width>
-      <height>60</height>
+      <x>190</x>
+      <y>100</y>
+      <width>90</width>
+      <height>90</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -204,7 +303,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>20</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -212,14 +311,23 @@
     <property name="text">
      <string>180°</string>
     </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>true</bool>
+    </property>
    </widget>
-   <widget class="QLCDNumber" name="lcdNumber">
+   <widget class="QLCDNumber" name="lcdNumber_0">
     <property name="geometry">
      <rect>
-      <x>71</x>
-      <y>70</y>
-      <width>17</width>
-      <height>18</height>
+      <x>100</x>
+      <y>100</y>
+      <width>30</width>
+      <height>30</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -233,56 +341,32 @@
       <pointsize>8</pointsize>
      </font>
     </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
     <property name="smallDecimalPoint">
      <bool>false</bool>
     </property>
     <property name="digitCount">
-     <number>2</number>
+     <number>3</number>
     </property>
     <property name="segmentStyle">
      <enum>QLCDNumber::Flat</enum>
     </property>
     <property name="intValue" stdset="0">
      <number>-1</number>
-    </property>
-   </widget>
-   <widget class="QLCDNumber" name="lcdNumber_2">
-    <property name="geometry">
-     <rect>
-      <x>71</x>
-      <y>90</y>
-      <width>17</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>8</pointsize>
-     </font>
-    </property>
-    <property name="smallDecimalPoint">
-     <bool>false</bool>
-    </property>
-    <property name="digitCount">
-     <number>2</number>
-    </property>
-    <property name="segmentStyle">
-     <enum>QLCDNumber::Flat</enum>
     </property>
    </widget>
    <widget class="QLCDNumber" name="lcdNumber_3">
     <property name="geometry">
      <rect>
-      <x>71</x>
-      <y>110</y>
-      <width>17</width>
-      <height>18</height>
+      <x>100</x>
+      <y>130</y>
+      <width>30</width>
+      <height>30</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -300,70 +384,7 @@
      <bool>false</bool>
     </property>
     <property name="digitCount">
-     <number>2</number>
-    </property>
-    <property name="segmentStyle">
-     <enum>QLCDNumber::Flat</enum>
-    </property>
-   </widget>
-   <widget class="QLCDNumber" name="lcdNumber_4">
-    <property name="geometry">
-     <rect>
-      <x>91</x>
-      <y>70</y>
-      <width>17</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>8</pointsize>
-     </font>
-    </property>
-    <property name="smallDecimalPoint">
-     <bool>false</bool>
-    </property>
-    <property name="digitCount">
-     <number>2</number>
-    </property>
-    <property name="segmentStyle">
-     <enum>QLCDNumber::Flat</enum>
-    </property>
-    <property name="intValue" stdset="0">
-     <number>-1</number>
-    </property>
-   </widget>
-   <widget class="QLCDNumber" name="lcdNumber_5">
-    <property name="geometry">
-     <rect>
-      <x>91</x>
-      <y>110</y>
-      <width>17</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>8</pointsize>
-     </font>
-    </property>
-    <property name="smallDecimalPoint">
-     <bool>false</bool>
-    </property>
-    <property name="digitCount">
-     <number>2</number>
+     <number>3</number>
     </property>
     <property name="segmentStyle">
      <enum>QLCDNumber::Flat</enum>
@@ -372,10 +393,10 @@
    <widget class="QLCDNumber" name="lcdNumber_6">
     <property name="geometry">
      <rect>
-      <x>91</x>
-      <y>90</y>
-      <width>17</width>
-      <height>18</height>
+      <x>100</x>
+      <y>160</y>
+      <width>30</width>
+      <height>30</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -393,19 +414,55 @@
      <bool>false</bool>
     </property>
     <property name="digitCount">
-     <number>2</number>
+     <number>3</number>
     </property>
     <property name="segmentStyle">
      <enum>QLCDNumber::Flat</enum>
+    </property>
+    <property name="intValue" stdset="0">
+     <number>-21</number>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdNumber_1">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>100</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="smallDecimalPoint">
+     <bool>false</bool>
+    </property>
+    <property name="digitCount">
+     <number>3</number>
+    </property>
+    <property name="segmentStyle">
+     <enum>QLCDNumber::Flat</enum>
+    </property>
+    <property name="intValue" stdset="0">
+     <number>-1</number>
     </property>
    </widget>
    <widget class="QLCDNumber" name="lcdNumber_7">
     <property name="geometry">
      <rect>
-      <x>111</x>
-      <y>70</y>
-      <width>17</width>
-      <height>18</height>
+      <x>130</x>
+      <y>160</y>
+      <width>30</width>
+      <height>30</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -423,7 +480,67 @@
      <bool>false</bool>
     </property>
     <property name="digitCount">
-     <number>2</number>
+     <number>3</number>
+    </property>
+    <property name="segmentStyle">
+     <enum>QLCDNumber::Flat</enum>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdNumber_4">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>130</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="smallDecimalPoint">
+     <bool>false</bool>
+    </property>
+    <property name="digitCount">
+     <number>3</number>
+    </property>
+    <property name="segmentStyle">
+     <enum>QLCDNumber::Flat</enum>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdNumber_2">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>100</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="smallDecimalPoint">
+     <bool>false</bool>
+    </property>
+    <property name="digitCount">
+     <number>3</number>
     </property>
     <property name="segmentStyle">
      <enum>QLCDNumber::Flat</enum>
@@ -432,10 +549,10 @@
    <widget class="QLCDNumber" name="lcdNumber_8">
     <property name="geometry">
      <rect>
-      <x>111</x>
-      <y>110</y>
-      <width>17</width>
-      <height>18</height>
+      <x>160</x>
+      <y>160</y>
+      <width>30</width>
+      <height>30</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -453,62 +570,71 @@
      <bool>false</bool>
     </property>
     <property name="digitCount">
-     <number>2</number>
-    </property>
-    <property name="segmentStyle">
-     <enum>QLCDNumber::Flat</enum>
-    </property>
-   </widget>
-   <widget class="QLCDNumber" name="lcdNumber_9">
-    <property name="geometry">
-     <rect>
-      <x>111</x>
-      <y>90</y>
-      <width>17</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>8</pointsize>
-     </font>
-    </property>
-    <property name="smallDecimalPoint">
-     <bool>false</bool>
-    </property>
-    <property name="digitCount">
-     <number>2</number>
-    </property>
-    <property name="segmentStyle">
-     <enum>QLCDNumber::Flat</enum>
-    </property>
-   </widget>
-   <widget class="QLCDNumber" name="lcdNumber_10">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>230</y>
-      <width>21</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="smallDecimalPoint">
-     <bool>false</bool>
-    </property>
-    <property name="digitCount">
-     <number>2</number>
+     <number>3</number>
     </property>
     <property name="segmentStyle">
      <enum>QLCDNumber::Flat</enum>
     </property>
     <property name="intValue" stdset="0">
-     <number>-1</number>
+     <number>-21</number>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdNumber_5">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>130</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="smallDecimalPoint">
+     <bool>false</bool>
+    </property>
+    <property name="digitCount">
+     <number>3</number>
+    </property>
+    <property name="segmentStyle">
+     <enum>QLCDNumber::Flat</enum>
+    </property>
+   </widget>
+   <widget class="QScrollBar" name="horizontalScrollBar">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>290</y>
+      <width>265</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>2</number>
+    </property>
+    <property name="maximum">
+     <number>21</number>
+    </property>
+    <property name="tracking">
+     <bool>true</bool>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="invertedAppearance">
+     <bool>false</bool>
+    </property>
+    <property name="invertedControls">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>

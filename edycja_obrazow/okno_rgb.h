@@ -22,7 +22,7 @@ public:
     void paintEvent(QPaintEvent *event);
 
     //funkcje do komunikacji pomiedzy klasami
-    bool zmienne_z_MainWindow(struct IMG* rgb, QImage* img, int* lR, int* lG, int* lB, QImage* lr_img, QImage* lg_img, QImage* lb_img);
+    bool zmienne_z_Wincyj(struct IMG* rgb, QImage* img, int* lR, int* lG, int* lB, QImage* lr_img, QImage* lg_img, QImage* lb_img, MASK* l_mask);
 
 private slots:
     void on_pushButton_clicked();

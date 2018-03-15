@@ -54,7 +54,7 @@ void Okno_RGB::paintEvent(QPaintEvent *event)
 
 //.......Funkcje do komunikacji pomiędzy klasami
 
-bool Okno_RGB:: zmienne_z_MainWindow(struct IMG* rgb, QImage* img, int* lR, int* lG, int* lB, QImage* lr_img, QImage* lg_img, QImage* lb_img){
+bool Okno_RGB:: zmienne_z_Wincyj(struct IMG* rgb, QImage* img, int* lR, int* lG, int* lB, QImage* lr_img, QImage* lg_img, QImage* lb_img, MASK* l_mask){
     if(rgb == NULL || img == NULL)  return 0;
 
     U_rgb = rgb;

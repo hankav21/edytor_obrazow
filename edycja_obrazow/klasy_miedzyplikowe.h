@@ -12,6 +12,22 @@ struct RGB{
     int b;
 };
 
+//służy do tegożeby przekazywać wskaźniki w maskach, żeby prze wiele parametrów mogły być spokojnie edytowane - i mieć warości ujemne
+//trzeba utworzyć zmienne typu:
+//int value = wartosc;
+//int* wsk = &value;
+//przyklad w masce Sobela
+struct KAT{
+    int* mask[9];
+
+    KAT(){};
+    KAT(int** tab_mask){
+        for(int i = 0; i<9; i++)
+           mask[i] = tab_mask[i];
+    }
+
+};
+
 struct MASK{
     std:: vector<std:: vector<int> > mask;
     int wys,szer,suma_mask;
@@ -53,6 +69,16 @@ struct MASK{
                 suma_mask += mask[i][j];
         if(suma_mask == 0)  suma_mask = szer + wys;
         return suma_mask;
+    }
+
+    MASK zmien(const int wyp[], const int w, const int s){
+        wys = w;
+        szer = s;
+        //mask.wyp_mask(wyp);
+        //spr czy musze przypisac do mask?
+        this->wyp_mask(wyp);
+        this->obl_sume_mask();
+        return *this;
     }
 };
 

@@ -28,10 +28,6 @@ public:
     QImage U_img;   //wczytywane przez uzytkownika
     IMG U_rgb;
 
-    QImage R_img, G_img, B_img;
-
-
-    int R,G,B;
 
     //funkcje
     //bool f1(void){int x=1;};
@@ -40,6 +36,9 @@ private slots:
     void on_pushButton_menu_zapisopodobne_clicked();
     void on_pushButton_podgladRGB_clicked();
     void on_pushButton_Wincyj_clicked();
+
+
+    void on_pushButton_Aktualizuj_clicked();
 
 private:
     Ui::MainWindow *ui;

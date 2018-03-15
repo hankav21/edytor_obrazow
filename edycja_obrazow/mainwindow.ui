@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>290</width>
-    <height>100</height>
+    <width>399</width>
+    <height>331</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -42,8 +42,13 @@
       <height>23</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+     </font>
+    </property>
     <property name="text">
-     <string>Podgląd RGB</string>
+     <string>przycisk w budowie</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_Wincyj">
@@ -57,6 +62,19 @@
     </property>
     <property name="text">
      <string>Wincyj</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Aktualizuj">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>0</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Aktualizuj obraz</string>
     </property>
    </widget>
   </widget>
