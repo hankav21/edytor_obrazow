@@ -39,7 +39,6 @@ public:
 private slots:
     void on_pushButton_menu_zapisopodobne_clicked();
     void on_pushButton_podgladRGB_clicked();
-
     void on_pushButton_Wincyj_clicked();
 
 private:

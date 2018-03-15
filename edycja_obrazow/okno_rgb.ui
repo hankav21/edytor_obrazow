@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>220</width>
-    <height>446</height>
+    <width>110</width>
+    <height>140</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>110</width>
+    <height>140</height>
+   </size>
   </property>
   <property name="floating">
    <bool>true</bool>

@@ -22,16 +22,16 @@ void MainWindow::paintEvent(QPaintEvent *event)
 {
     QPainter paint(this);
 
-    QRectF target(10, 30, width()-20, height()-40);
-    //paint.drawImage(target,U_img);
+//    QRectF target(10, 30, width()-20, height()-40);
+//    paint.drawImage(target,U_img);
 
     if(zm == 1){
     IMG pom(&U_rgb, 3, 3 );
     IMG pow(3,3,&U_rgb);
 
-    int tabm[] = {   1,1,1,
-                    1,1,1,
-                    1,1,1
+    int tabm[] = {  - 1,-2,-1,
+                    0,0,0,
+                   1,2,1
                 };
 
     MASK m(tabm,3,3);
@@ -44,9 +44,9 @@ void MainWindow::paintEvent(QPaintEvent *event)
     powo = pom.Make_img_from_RGB(pow);
     IMG wyn(&pow, 3,3);
     powo = pom.Make_img_from_RGB(wyn);
-    QRectF target1(20, 20, 150, 150);
-    paint.drawImage(target1,U_img);
-    QRectF target2(50, 350, 150, 150);
+//    QRectF target1(20, 20, 150, 150);
+//    paint.drawImage(target1,U_img);
+    QRectF target2(10, 30, width()-20, height()-40);
 
 
     paint.drawImage(target2,powo);

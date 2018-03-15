@@ -4,6 +4,7 @@
 #include <QVector>
 #include <QImage>
 #include <QDebug>
+#include <math.h>
 
 struct RGB{
     int r;
@@ -44,11 +45,13 @@ struct MASK{
         return mask;
     }
 
+    //im przez wieksza mske dzielisz tym ciensze linie sie robia
     int obl_sume_mask(){
         suma_mask = 0;
         for(int i = 0; i<wys; ++i)
             for(int j = 0; j < szer; ++j)
                 suma_mask += mask[i][j];
+        if(suma_mask == 0)  suma_mask = szer + wys;
         return suma_mask;
     }
 };
@@ -275,9 +278,10 @@ struct IMG{
     //wsadzamy juz powiekszony obraz->zeby tyle nie obliczaac -> nie wyswietli sie dodatkowych krawedzi zeby to ladnie wygladalo
     IMG Make_rgb_with_mask(IMG* img, MASK* mask){
         IMG img_out(img->szer, img->wys);
-qDebug() << img->szer << img->wys;
+
         int wm = mask->wys/2;
         int sm = mask->szer/2;
+        int abs_sum_m = abs(mask->suma_mask);
 
         for(int i = wm; i < img->wys - wm - wm; i++)
             for(int j = mask->szer/2; j < img->szer - sm -sm; j++){
@@ -289,9 +293,12 @@ qDebug() << img->szer << img->wys;
                         img_out.rgb[i * img_out.szer + j].b += img->rgb[wsp_img].b * mask->mask[w][k];
 
                     }
-            img_out.rgb[i * img_out.szer + j].r /= mask->suma_mask;
-            img_out.rgb[i * img_out.szer + j].g /= mask->suma_mask;
-            img_out.rgb[i * img_out.szer + j].b /= mask->suma_mask;
+            img_out.rgb[i * img_out.szer + j].r = abs(img_out.rgb[i * img_out.szer + j].r) / abs_sum_m;
+            img_out.rgb[i * img_out.szer + j].g = abs(img_out.rgb[i * img_out.szer + j].g) / abs_sum_m;
+            img_out.rgb[i * img_out.szer + j].b = abs(img_out.rgb[i * img_out.szer + j].b) / abs_sum_m;
+            if(img_out.rgb[i * img_out.szer + j].r > 225 || img_out.rgb[i * img_out.szer + j].r < 0)    qDebug() << img_out.rgb[i * img_out.szer + j].r;
+            if(img_out.rgb[i * img_out.szer + j].g > 225 || img_out.rgb[i * img_out.szer + j].g < 0)    qDebug() << img_out.rgb[i * img_out.szer + j].g;
+            if(img_out.rgb[i * img_out.szer + j].b > 225 || img_out.rgb[i * img_out.szer + j].b < 0)    qDebug() << img_out.rgb[i * img_out.szer + j].b;
         }
 
         return img_out;

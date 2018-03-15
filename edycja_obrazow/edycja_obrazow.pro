@@ -28,17 +28,23 @@ SOURCES += main.cpp\
     menu_odczytu_i_zapisu.cpp \
     okno_rgb.cpp \
     wincyj.cpp \
-    manipulacja_rgb.cpp
+    manipulacja_rgb.cpp \
+    podglad.cpp \
+    sobel.cpp
 
 HEADERS  += mainwindow.h \
     menu_odczytu_i_zapisu.h \
     okno_rgb.h \
     wincyj.h \
     klasy_miedzyplikowe.h \
-    manipulacja_rgb.h
+    manipulacja_rgb.h \
+    podglad.h \
+    sobel.h
 
 FORMS    += mainwindow.ui \
     menu_odczytu_i_zapisu.ui \
     okno_rgb.ui \
     wincyj.ui \
-    manipulacja_rgb.ui
+    manipulacja_rgb.ui \
+    podglad.ui \
+    sobel.ui
