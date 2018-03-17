@@ -66,7 +66,7 @@ struct MASK{
         suma_mask = 0;
         for(int i = 0; i<wys; ++i)
             for(int j = 0; j < szer; ++j)
-                suma_mask += mask[i][j];
+                suma_mask += abs(mask[i][j]);
         if(suma_mask == 0)  suma_mask = szer + wys;
         return suma_mask;
     }
@@ -322,9 +322,9 @@ struct IMG{
             img_out.rgb[i * img_out.szer + j].r = abs(img_out.rgb[i * img_out.szer + j].r) / abs_sum_m;
             img_out.rgb[i * img_out.szer + j].g = abs(img_out.rgb[i * img_out.szer + j].g) / abs_sum_m;
             img_out.rgb[i * img_out.szer + j].b = abs(img_out.rgb[i * img_out.szer + j].b) / abs_sum_m;
-            if(img_out.rgb[i * img_out.szer + j].r > 225 || img_out.rgb[i * img_out.szer + j].r < 0)    qDebug() << img_out.rgb[i * img_out.szer + j].r;
-            if(img_out.rgb[i * img_out.szer + j].g > 225 || img_out.rgb[i * img_out.szer + j].g < 0)    qDebug() << img_out.rgb[i * img_out.szer + j].g;
-            if(img_out.rgb[i * img_out.szer + j].b > 225 || img_out.rgb[i * img_out.szer + j].b < 0)    qDebug() << img_out.rgb[i * img_out.szer + j].b;
+//            if(img_out.rgb[i * img_out.szer + j].r > 225 || img_out.rgb[i * img_out.szer + j].r < 0)    qDebug() << img_out.rgb[i * img_out.szer + j].r;
+//            if(img_out.rgb[i * img_out.szer + j].g > 225 || img_out.rgb[i * img_out.szer + j].g < 0)    qDebug() << img_out.rgb[i * img_out.szer + j].g;
+//            if(img_out.rgb[i * img_out.szer + j].b > 225 || img_out.rgb[i * img_out.szer + j].b < 0)    qDebug() << img_out.rgb[i * img_out.szer + j].b;
         }
 
         return img_out;

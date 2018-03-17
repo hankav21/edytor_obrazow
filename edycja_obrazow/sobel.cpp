@@ -78,7 +78,7 @@ void Sobel::aktualizuj_zmienne_z_Wincyj(){
 void Sobel::aktualizuj(){
     for(int i = 0; i<9; i++)
         lcd[i]->display(*Filtr.mask[i]);
-    aktualizuj_zmienne_z_Wincyj();
+   // aktualizuj_zmienne_z_Wincyj();
 
 }
 
@@ -171,4 +171,9 @@ void Sobel::on_horizontalScrollBar_valueChanged(int value)
     *this->minus_value = -value;
     aktualizuj();
 
+}
+
+void Sobel::on_pushButton_clicked()
+{
+    aktualizuj_zmienne_z_Wincyj();
 }

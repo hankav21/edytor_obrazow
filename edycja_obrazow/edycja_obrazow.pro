@@ -30,7 +30,8 @@ SOURCES += main.cpp\
     wincyj.cpp \
     manipulacja_rgb.cpp \
     podglad.cpp \
-    sobel.cpp
+    sobel.cpp \
+    wytnij.cpp
 
 HEADERS  += mainwindow.h \
     menu_odczytu_i_zapisu.h \
@@ -39,7 +40,8 @@ HEADERS  += mainwindow.h \
     klasy_miedzyplikowe.h \
     manipulacja_rgb.h \
     podglad.h \
-    sobel.h
+    sobel.h \
+    wytnij.h
 
 FORMS    += mainwindow.ui \
     menu_odczytu_i_zapisu.ui \
@@ -47,4 +49,5 @@ FORMS    += mainwindow.ui \
     wincyj.ui \
     manipulacja_rgb.ui \
     podglad.ui \
-    sobel.ui
+    sobel.ui \
+    wytnij.ui

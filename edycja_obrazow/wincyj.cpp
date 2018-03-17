@@ -74,3 +74,10 @@ void Wincyj::on_pushButton_Podglad_RGB_clicked()
     widget_oknoRGB->show();
     widget_oknoRGB->zmienne_z_Wincyj(&mod_rgb,&mod_img,&R,&G,&B,&R_img, &G_img, &B_img, &mask);
 }
+
+void Wincyj::on_pushButton_Sobel_Wytnij_clicked()
+{
+    widget_wytnij = new wytnij(this);
+    widget_wytnij->show();
+
+}

@@ -614,7 +614,7 @@
      <rect>
       <x>10</x>
       <y>290</y>
-      <width>265</width>
+      <width>231</width>
       <height>20</height>
      </rect>
     </property>
@@ -635,6 +635,29 @@
     </property>
     <property name="invertedControls">
      <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>285</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="whatsThis">
+     <string extracomment="przycisk potwierdzający wprowadzenie zmian do modyfikowanego obrazu -&gt; widzoczne w podgladzie"/>
+    </property>
+    <property name="text">
+     <string>OK</string>
     </property>
    </widget>
   </widget>

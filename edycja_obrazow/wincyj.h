@@ -8,6 +8,7 @@
 #include "podglad.h"
 #include "sobel.h"
 #include "okno_rgb.h"
+#include "wytnij.h"
 
 #include <QDebug>
 
@@ -44,6 +45,8 @@ private slots:
 
     void on_pushButton_Podglad_RGB_clicked();
 
+    void on_pushButton_Sobel_Wytnij_clicked();
+
 private:
     Ui::Wincyj *ui;
 
@@ -52,6 +55,7 @@ private:
     Podglad *widget_podglad;
     Sobel* widget_sobel;
     Okno_RGB* widget_oknoRGB;
+    wytnij* widget_wytnij;
 
     bool aktualizuj;
 
