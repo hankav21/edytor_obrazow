@@ -329,6 +329,14 @@ struct IMG{
 
         return img_out;
     }
+
+    IMG wytnij(IMG* l_rgb, int x, int y, int w, int sz){
+        IMG wyn_rgb(sz, w);
+        for(int i = 0; i< y + w; i++)
+            for(int j = 0; j< x + sz; j++)
+                   wyn_rgb.rgb[i*wyn_rgb.szer + j] = l_rgb->rgb[(i+y)*l_rgb->szer + j+x];
+        return wyn_rgb;
+    }
 };
 
 

@@ -57,6 +57,7 @@ void Wincyj::on_pushButton_Zatwierdz_clicked()
     //mod_img = u_rgb->Make_img_from_RGB_Upr(&mod_rgb, R, G, B);
     //zatwierdzenie zmian z maski
     //new IMG(&mod_rgb);//&mod_rgb;
+
     *u_img = u_rgb->Make_img_from_RGB_Upr(&mod_rgb, R, G, B);//new QImage(mod_img);//&mod_img;
     u_rgb->Make_RGB_from_img(*u_img, *u_rgb);
 }
@@ -79,5 +80,5 @@ void Wincyj::on_pushButton_Sobel_Wytnij_clicked()
 {
     widget_wytnij = new wytnij(this);
     widget_wytnij->show();
-
+    widget_wytnij->zmienne_z_Wincyj(&mod_img, &mod_rgb);
 }

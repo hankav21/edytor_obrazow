@@ -10,6 +10,9 @@
     <height>343</height>
    </rect>
   </property>
+  <property name="floating">
+   <bool>true</bool>
+  </property>
   <property name="features">
    <set>QDockWidget::DockWidgetClosable</set>
   </property>
@@ -41,6 +44,9 @@
       <width>51</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="maximum">
+     <number>9999999</number>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -92,6 +98,9 @@
       <height>22</height>
      </rect>
     </property>
+    <property name="maximum">
+     <number>9999999</number>
+    </property>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
@@ -122,6 +131,9 @@
       <height>22</height>
      </rect>
     </property>
+    <property name="maximum">
+     <number>9999999</number>
+    </property>
    </widget>
    <widget class="QSpinBox" name="spinBox_szer">
     <property name="geometry">
@@ -131,6 +143,9 @@
       <width>51</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="maximum">
+     <number>9999999</number>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">

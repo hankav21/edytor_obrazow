@@ -2,7 +2,7 @@
 #define WYTNIJ_H
 
 #include <QDockWidget>
-#include <QImage>
+#include <QPainter>
 #include "klasy_miedzyplikowe.h"
 
 namespace Ui {
@@ -16,6 +16,10 @@ class wytnij : public QDockWidget
 public:
     explicit wytnij(QWidget *parent = 0);
     ~wytnij();
+    void paintEvent(QPaintEvent *event);
+
+    //fun kom
+    bool zmienne_z_Wincyj(QImage* l_mod_img, IMG* l_mod_rgb);
 
 private slots:
     void on_spinBox_X_valueChanged(int arg1);
@@ -30,6 +34,15 @@ private slots:
 
 private:
     Ui::wytnij *ui;
+
+    QImage* mod_img, podglad;
+    IMG* mod_rgb;
+    int X,Y,Wys, Szer;
+
+    //fun
+    void zatwierdz();
+
+
 };
 
 #endif // WYTNIJ_H

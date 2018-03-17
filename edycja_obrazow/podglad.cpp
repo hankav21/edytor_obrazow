@@ -17,13 +17,20 @@ void Podglad::paintEvent(QPaintEvent *event)
 {
     QPainter paint(this);
 
+//    QRectF target(
+//                    -mask->szer,                //poziomo
+//                    //- mask->wys ,               //pionowo
+//                    width() + mask->szer,
+//                    height() + mask->wys
+//                );
     QRectF target(
-                    -mask->szer,                //poziomo
-                    - mask->wys ,               //pionowo
-                    width() + mask->szer,
-                    height() + mask->wys
+                    0,                //poziomo
+                    0 ,               //pionowo
+                    width(),
+                    height()
                 );
     paint.drawImage(target,*u_img_pow);
+    update();
 }
 
 
