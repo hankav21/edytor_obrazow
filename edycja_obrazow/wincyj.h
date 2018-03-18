@@ -11,6 +11,7 @@
 #include "wytnij.h"
 #include "rozdzielczosc.h"
 #include "wlasna_maska.h"
+#include "rozmycie.h"
 
 #include <QDebug>
 
@@ -53,6 +54,8 @@ private slots:
 
     void on_pushButton_wlasna_maska_clicked();
 
+    void on_pushButton_dolnoprzepustowe_clicked();
+
 private:
     Ui::Wincyj *ui;
 
@@ -64,6 +67,7 @@ private:
     wytnij* widget_wytnij;
     rozdzielczosc* widget_rozdzielczosc;
     wlasna_maska* widget_wlasna_maska;
+    rozmycie* widget_rozmycie;
 
     bool aktualizuj;
 

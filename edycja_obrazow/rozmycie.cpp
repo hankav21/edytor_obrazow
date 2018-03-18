@@ -12,3 +12,15 @@ rozmycie::~rozmycie()
 {
     delete ui;
 }
+
+bool rozmycie::zmienne_z_Wincyj(IMG* l_rgb, QImage* l_img, IMG* lu_rgb, QImage* lu_img){
+
+    mod_img = l_img;
+    mod_rgb = l_rgb;
+
+    u_img = lu_img;
+    u_rgb = lu_rgb;
+
+
+    return 1;
+}

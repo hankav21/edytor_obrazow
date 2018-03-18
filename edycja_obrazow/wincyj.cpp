@@ -98,3 +98,10 @@ void Wincyj::on_pushButton_wlasna_maska_clicked()
     widget_wlasna_maska->zmienne_z_Wincyj(&mod_rgb, &mod_img, u_rgb, u_img);
 
 }
+
+void Wincyj::on_pushButton_dolnoprzepustowe_clicked()
+{
+    widget_rozmycie = new rozmycie(this);
+    widget_rozmycie->show();
+    widget_rozmycie->zmienne_z_Wincyj(&mod_rgb, &mod_img, u_rgb, u_img);
+}
