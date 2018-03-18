@@ -35,7 +35,7 @@ private slots:
 private:
     Ui::wytnij *ui;
 
-    QImage* mod_img, podglad;
+    QImage* mod_img;
     IMG* mod_rgb;
     int X,Y,Wys, Szer;
 

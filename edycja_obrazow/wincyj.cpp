@@ -82,3 +82,11 @@ void Wincyj::on_pushButton_Sobel_Wytnij_clicked()
     widget_wytnij->show();
     widget_wytnij->zmienne_z_Wincyj(&mod_img, &mod_rgb);
 }
+
+void Wincyj::on_pushButton_rozdzielczosc_clicked()
+{
+//    if(widget_rozdzielczosc == NULL)
+    widget_rozdzielczosc = new rozdzielczosc(this);
+    widget_rozdzielczosc->show();
+    widget_rozdzielczosc->zmienne_z_Wincyj(&mod_img, &mod_rgb);
+}

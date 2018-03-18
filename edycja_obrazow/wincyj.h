@@ -9,6 +9,7 @@
 #include "sobel.h"
 #include "okno_rgb.h"
 #include "wytnij.h"
+#include "rozdzielczosc.h"
 
 #include <QDebug>
 
@@ -47,6 +48,8 @@ private slots:
 
     void on_pushButton_Sobel_Wytnij_clicked();
 
+    void on_pushButton_rozdzielczosc_clicked();
+
 private:
     Ui::Wincyj *ui;
 
@@ -56,6 +59,7 @@ private:
     Sobel* widget_sobel;
     Okno_RGB* widget_oknoRGB;
     wytnij* widget_wytnij;
+    rozdzielczosc* widget_rozdzielczosc;
 
     bool aktualizuj;
 

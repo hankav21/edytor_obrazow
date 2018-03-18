@@ -67,7 +67,6 @@ bool wytnij::zmienne_z_Wincyj(QImage* l_mod_img, IMG* l_mod_rgb){
     mod_img = l_mod_img;
     mod_rgb = l_mod_rgb;
 
-    podglad = *mod_img;
     X = 0;
     Y = 0;
     Wys = mod_rgb->wys;

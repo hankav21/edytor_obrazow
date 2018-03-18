@@ -31,7 +31,8 @@ SOURCES += main.cpp\
     manipulacja_rgb.cpp \
     podglad.cpp \
     sobel.cpp \
-    wytnij.cpp
+    wytnij.cpp \
+    rozdzielczosc.cpp
 
 HEADERS  += mainwindow.h \
     menu_odczytu_i_zapisu.h \
@@ -41,7 +42,8 @@ HEADERS  += mainwindow.h \
     manipulacja_rgb.h \
     podglad.h \
     sobel.h \
-    wytnij.h
+    wytnij.h \
+    rozdzielczosc.h
 
 FORMS    += mainwindow.ui \
     menu_odczytu_i_zapisu.ui \
@@ -50,4 +52,5 @@ FORMS    += mainwindow.ui \
     manipulacja_rgb.ui \
     podglad.ui \
     sobel.ui \
-    wytnij.ui
+    wytnij.ui \
+    rozdzielczosc.ui

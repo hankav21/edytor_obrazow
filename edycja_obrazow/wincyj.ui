@@ -114,6 +114,19 @@
      <string>Wytnij</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_rozdzielczosc">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>220</y>
+      <width>141</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Zmiana roździelczości</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
