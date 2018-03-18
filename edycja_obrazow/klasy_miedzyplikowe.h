@@ -49,6 +49,14 @@ struct MASK{
         this->obl_sume_mask();
     }
 
+    MASK(const int w, const int s){
+        wys = w;
+        szer = s;
+        mask.resize(wys);
+        for(int i = 0; i<wys; i++)
+            mask[i].resize(szer);
+    }
+
     //przyjmujemy, że rozmiar tablicy jest identyczny do utworzonej maski
     std:: vector<std:: vector<int> > wyp_mask(const int wyp[]){
         mask.resize(wys);
@@ -79,6 +87,10 @@ struct MASK{
         this->wyp_mask(wyp);
         this->obl_sume_mask();
         return *this;
+    }
+
+    void zmien_element(int value, const int w, const int s){
+        mask[w][s] = value;
     }
 };
 

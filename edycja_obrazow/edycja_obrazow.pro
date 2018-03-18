@@ -32,7 +32,9 @@ SOURCES += main.cpp\
     podglad.cpp \
     sobel.cpp \
     wytnij.cpp \
-    rozdzielczosc.cpp
+    rozdzielczosc.cpp \
+    rozmycie.cpp \
+    wlasna_maska.cpp
 
 HEADERS  += mainwindow.h \
     menu_odczytu_i_zapisu.h \
@@ -43,7 +45,9 @@ HEADERS  += mainwindow.h \
     podglad.h \
     sobel.h \
     wytnij.h \
-    rozdzielczosc.h
+    rozdzielczosc.h \
+    rozmycie.h \
+    wlasna_maska.h
 
 FORMS    += mainwindow.ui \
     menu_odczytu_i_zapisu.ui \
@@ -53,4 +57,6 @@ FORMS    += mainwindow.ui \
     podglad.ui \
     sobel.ui \
     wytnij.ui \
-    rozdzielczosc.ui
+    rozdzielczosc.ui \
+    rozmycie.ui \
+    wlasna_maska.ui

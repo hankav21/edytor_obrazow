@@ -10,6 +10,7 @@
 #include "okno_rgb.h"
 #include "wytnij.h"
 #include "rozdzielczosc.h"
+#include "wlasna_maska.h"
 
 #include <QDebug>
 
@@ -50,6 +51,8 @@ private slots:
 
     void on_pushButton_rozdzielczosc_clicked();
 
+    void on_pushButton_wlasna_maska_clicked();
+
 private:
     Ui::Wincyj *ui;
 
@@ -60,6 +63,7 @@ private:
     Okno_RGB* widget_oknoRGB;
     wytnij* widget_wytnij;
     rozdzielczosc* widget_rozdzielczosc;
+    wlasna_maska* widget_wlasna_maska;
 
     bool aktualizuj;
 

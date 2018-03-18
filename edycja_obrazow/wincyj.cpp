@@ -90,3 +90,11 @@ void Wincyj::on_pushButton_rozdzielczosc_clicked()
     widget_rozdzielczosc->show();
     widget_rozdzielczosc->zmienne_z_Wincyj(&mod_img, &mod_rgb);
 }
+
+void Wincyj::on_pushButton_wlasna_maska_clicked()
+{
+    widget_wlasna_maska = new wlasna_maska(this);
+    widget_wlasna_maska->show();
+    widget_wlasna_maska->zmienne_z_Wincyj(&mod_rgb, &mod_img, u_rgb, u_img);
+
+}
