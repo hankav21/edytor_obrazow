@@ -21,6 +21,50 @@ bool rozmycie::zmienne_z_Wincyj(IMG* l_rgb, QImage* l_img, IMG* lu_rgb, QImage* 
     u_img = lu_img;
     u_rgb = lu_rgb;
 
+    mask = MASK();
+    rozmiar = 1;
+    wartosc = 0;
+
 
     return 1;
+}
+
+void rozmycie::on_verticalScrollBar_rozmiar_valueChanged(int value)
+{
+    rozmiar = value;
+}
+
+void rozmycie::on_verticalScrollBar_wartosc_valueChanged(int value)
+{   wartosc = value;
+
+}
+
+void rozmycie::on_pushButton_kwadrat_clicked()
+{
+
+}
+
+void rozmycie::on_pushButton_kolo_clicked()
+{
+
+}
+
+void rozmycie::on_pushButton_stozkek_clicked()
+{
+
+}
+
+void rozmycie::on_pushButton_piramida_clicked()
+{
+
+}
+
+void rozmycie::on_pushButton_Gauss_clicked()
+{
+
+}
+
+void rozmycie::on_pushButton_ok_clicked()
+{
+
 }

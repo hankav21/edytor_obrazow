@@ -45,7 +45,7 @@ private:
 
     int zm = 0;
     QWidget okno_okolozapisu;
-    menu_odczytu_i_zapisu *widget_okolozapisu;
+    menu_odczytu_i_zapisu *widget_okolozapisu = NULL;
 
     QWidget okno_podgladuRGB;
     Okno_RGB *widget_podgladuRGB;
