@@ -3,6 +3,12 @@
 
 #include <QDockWidget>
 #include "klasy_miedzyplikowe.h"
+#include <QLCDNumber>
+#include <QVector>
+#include <QPainter>
+#include <QPushButton>
+
+#define sqr(A)  ((A)*(A))
 
 namespace Ui {
 class rozmycie;
@@ -43,6 +49,21 @@ private:
     IMG *mod_rgb, *u_rgb;
     MASK mask;
     int rozmiar, wartosc;
+
+    //do wyswietlaczy
+    std::vector < std::vector <QLCDNumber* > > lcd;
+    std::vector < std::vector <int > > tab;
+
+    QPushButton* butt;
+
+
+    //fun
+    bool aktualizuj_lcd();
+    bool aktualizuj_wartosci_lcd();
+    bool kwadrat();
+    bool kolo();
+    bool piramida();
+
 };
 
 #endif // ROZMYCIE_H

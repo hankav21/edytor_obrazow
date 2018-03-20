@@ -82,9 +82,18 @@ bool wytnij::zmienne_z_Wincyj(QImage* l_mod_img, IMG* l_mod_rgb){
 
 void wytnij::zatwierdz(){
     if(Wys + Y > mod_rgb->wys || Wys+Y <= 0) return;
-    if(Szer + X > mod_rgb->wys || Szer+X <= 0) return;
+    if(Szer + X > mod_rgb->szer || Szer+X <= 0) return;
     *mod_rgb = mod_rgb->wytnij(mod_rgb,X,Y,Wys,Szer);
     *mod_img = mod_rgb->Make_img_from_RGB(mod_rgb);
+    //aktualizuje zeby bylo ladne w okienku
+    X = 0;
+    Y = 0;
+    Wys = mod_rgb->wys;
+    Szer = mod_rgb->szer;
+    ui->spinBox_szer->setValue(Szer);
+    ui->spinBox_wys->setValue(Wys);
+    ui->spinBox_X->setValue(X);
+    ui->spinBox_Y->setValue(Y);
 }
 
 

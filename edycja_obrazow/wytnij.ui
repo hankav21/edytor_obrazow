@@ -131,6 +131,9 @@
       <height>22</height>
      </rect>
     </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
     <property name="maximum">
      <number>9999999</number>
     </property>
@@ -143,6 +146,9 @@
       <width>51</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
     </property>
     <property name="maximum">
      <number>9999999</number>

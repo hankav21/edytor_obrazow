@@ -54,6 +54,10 @@ void wlasna_maska::on_spinBox_szer_valueChanged(int arg1)
 
 void wlasna_maska::on_pushButton_buduj_clicked()
 {
+    for(int i = 0; i < lcd.size(); i++)
+        for(int j = 0; j < lcd[0].size(); j++)
+            (*lcd[i][j]).setVisible(0);
+
     mod_mask = new MASK(wys,szer);
     //tworzenie okienek lcd
     lcd.resize(wys);

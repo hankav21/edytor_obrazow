@@ -344,9 +344,16 @@ struct IMG{
 
     IMG wytnij(IMG* l_rgb, int x, int y, int w, int sz){
         IMG wyn_rgb(sz, w);
-        for(int i = 0; i< y + w; i++)
-            for(int j = 0; j< x + sz; j++)
+        //qDebug() << " wyn w sz: " << wyn_rgb.wys << wyn_rgb.szer;
+        //qDebug() << " src w sz: " << l_rgb->wys << l_rgb->szer;
+
+        for(int i = 0; i<  w; i++)
+            for(int j = 0; j< sz; j++){
+
+                 // qDebug() << "wyn[" << i*wyn_rgb.szer + j << "] src[" << (i+y)*l_rgb->szer + j+x;
                    wyn_rgb.rgb[i*wyn_rgb.szer + j] = l_rgb->rgb[(i+y)*l_rgb->szer + j+x];
+
+            }
         return wyn_rgb;
     }
 };
