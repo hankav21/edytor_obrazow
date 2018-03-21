@@ -34,7 +34,8 @@ SOURCES += main.cpp\
     wytnij.cpp \
     rozdzielczosc.cpp \
     rozmycie.cpp \
-    wlasna_maska.cpp
+    wlasna_maska.cpp \
+    autor.cpp
 
 HEADERS  += mainwindow.h \
     menu_odczytu_i_zapisu.h \
@@ -47,7 +48,8 @@ HEADERS  += mainwindow.h \
     wytnij.h \
     rozdzielczosc.h \
     rozmycie.h \
-    wlasna_maska.h
+    wlasna_maska.h \
+    autor.h
 
 FORMS    += mainwindow.ui \
     menu_odczytu_i_zapisu.ui \
@@ -59,4 +61,5 @@ FORMS    += mainwindow.ui \
     wytnij.ui \
     rozdzielczosc.ui \
     rozmycie.ui \
-    wlasna_maska.ui
+    wlasna_maska.ui \
+    autor.ui

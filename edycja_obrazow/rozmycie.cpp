@@ -122,20 +122,43 @@ bool rozmycie::piramida(){
     mask = MASK(rozmiar, rozmiar);
     mask.zmien_element(wartosc, roz, roz);
     mask.zmien_element(1,0,0);
+
     mask.zmien_element(sqrt(wartosc), 0, roz);
-    int pom = mask.mask[0][roz],
-        pom2 = mask.mask[roz][roz]/(roz-1);
+    mask.zmien_element(sqrt(wartosc), roz, 0);
+
+    int pom = mask.mask[0][roz]/(roz),
+        pom2 = mask.mask[roz][roz]/(roz);
+    //qDebug() << "pom pom2" << pom << pom2;
 
     for(int i = 1; i < rozmiar/2; i++){
-        mask.zmien_element(pom*i, 0, i);
-        mask.zmien_element(pom2 * i, i, roz);
+        //krok do sqrt(wartosci)
+        mask.zmien_element(pom + mask.mask[0][i-1], 0, i);
+       // mask.zmien_element(pom*i, 0, rozmiar - i - 1);
+        mask.zmien_element(mask.mask[0][i], i, 0);
+        //mask.zmien_element(pom*i, rozmiar - i - 1, 0);
+        //krok so
+        mask.zmien_element(pom2 + mask.mask[i-1][roz], i, roz);
+        //mask.zmien_element(pom2 * i, roz, i);
+        mask.zmien_element(mask.mask[i][roz], roz, i);
+        //mask.zmien_element(pom2 * i, roz , rozmiar - i -1 );
     }
 
-    for(int i = 1; i < roz; i++){
-        for(int j = roz - 1; j > i; j--){
-            mask.zmien_element(mask.mask[i-1][j]-mask.mask[i][j+1] ,i, j);
+    for(int i = roz - 1; i > 0; i--){
+        for(int j = roz - 1; j >= i; j--){
+            int wart = (mask.mask[i][j+1] + mask.mask[i+1][j])/3;
+            mask.zmien_element(wart ,i, j);
+            mask.zmien_element(wart ,j, i);
         }
     }
+
+    //kopiuj na reszte
+    for(int i = 0; i<=roz; i++ )
+        for(int j = 0; j<=roz; j++ ){
+            mask.zmien_element(mask.mask[i][j], rozmiar - j - 1,  rozmiar - i -1);
+            mask.zmien_element(mask.mask[i][j], j,  rozmiar - i -1);
+            mask.zmien_element(mask.mask[i][j], rozmiar - j - 1, i);
+        }
+
 
     aktualizuj_wartosci_lcd();
     aktualizuj_lcd();

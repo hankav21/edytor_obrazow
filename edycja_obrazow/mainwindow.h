@@ -6,6 +6,7 @@
 #include "okno_rgb.h"
 #include "wincyj.h"
 #include "klasy_miedzyplikowe.h"
+#include "autor.h"
 
 #include <QPainter>
 
@@ -52,6 +53,8 @@ private:
 
     QWidget okno_wincyj;
     Wincyj *widget_wincyj;
+
+    autor *widget_autor;
 
 
     std:: vector<std:: vector<float> > mask;

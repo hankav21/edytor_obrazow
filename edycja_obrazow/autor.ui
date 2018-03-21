@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>autor</class>
+ <widget class="QDockWidget" name="autor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>101</width>
+    <height>48</height>
+   </rect>
+  </property>
+  <property name="floating">
+   <bool>true</bool>
+  </property>
+  <property name="features">
+   <set>QDockWidget::DockWidgetClosable</set>
+  </property>
+  <property name="allowedAreas">
+   <set>Qt::NoDockWidgetArea</set>
+  </property>
+  <property name="windowTitle">
+   <string>Autor</string>
+  </property>
+  <widget class="QWidget" name="dockWidgetContents">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string> Hanna Pisarska</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

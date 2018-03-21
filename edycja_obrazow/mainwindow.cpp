@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    widget_autor = new(autor);
 
  }
 
@@ -60,13 +61,13 @@ void MainWindow::paintEvent(QPaintEvent *event)
 
 void MainWindow::on_pushButton_menu_zapisopodobne_clicked()
 {
-    okno_okolozapisu.show();
-    widget_okolozapisu = new menu_odczytu_i_zapisu(&okno_okolozapisu);
+    //okno_okolozapisu.show();
+    widget_okolozapisu = new menu_odczytu_i_zapisu(this);
     widget_okolozapisu->show();
     widget_okolozapisu->zmienne_z_MainWindow(&U_rgb, &U_img);
-    okno_okolozapisu.resize(150,300);
-    okno_okolozapisu.setMinimumSize(150,300);
-    okno_okolozapisu.setMaximumSize(150,300);
+    //okno_okolozapisu.resize(150,300);
+    //okno_okolozapisu.setMinimumSize(150,300);
+    //okno_okolozapisu.setMaximumSize(150,300);
 
 }
 

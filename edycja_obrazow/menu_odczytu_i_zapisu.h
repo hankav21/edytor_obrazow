@@ -40,6 +40,10 @@ private slots:
     void on_textEdit_textChanged(const QString &arg1);
     void on_pushButton_Wczytaj_clicked();
 
+    void on_pushButton_Zapisz_clicked();
+
+
+
 private:
     Ui::menu_odczytu_i_zapisu *ui;
     QString path;
@@ -59,6 +63,20 @@ private:
     bool menu_odczytu_i_zapisu:: Read_RGB_file(const char* name, IMG& rgb);
     //Tworzy vectory RGB z obrazu
     bool menu_odczytu_i_zapisu:: Img_from_User_img(QImage& img, IMG& rgb);
-    };
+   //tworzy plik .bin RGB
+    bool Write_RGB_bin_file(const char* name, IMG& rgb);
+    //wczytuje RGB z liku .bin
+    bool Read_RGB_from_bin_file(const char* name, IMG& rgb);
+    //wczytuje odcienie szarosci z pliku .txt
+    bool Read_Grey_from_flile(const char* name, IMG& rgb);
+    //zapisuje odcienie sarosci do .txt
+    bool Write_Grey_file(const char* name, IMG& rgb);
+    //zapsiuje odcienie szarosci do pliku bin
+    bool Write_Grey_bin_file(const char* name, IMG& rgb);
+    //wczytuje odcienie szarosci z pliku bin
+    bool Read_Grey_from_bin_flile(const char* name, IMG& rgb);
+
+};
+
 
 #endif // MENU_ODCZYTU_I_ZAPISU_H

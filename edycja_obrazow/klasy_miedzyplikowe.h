@@ -89,8 +89,8 @@ struct MASK{
         return *this;
     }
 
-    void zmien_element(int value, const int w, const int s){
-        mask[w][s] = value;
+    void zmien_element(int value, int w, int k){
+        mask[w][k] = value;
     }
 };
 
