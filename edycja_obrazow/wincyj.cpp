@@ -66,7 +66,7 @@ void Wincyj::on_pushButton_Sobel_clicked()
 {
     widget_sobel = new Sobel(this);
     widget_sobel->show();
-    widget_sobel->zmienne_z_Wincyj(&mask, &mod_rgb, &mod_img, u_rgb, u_img);
+    widget_sobel->zmienne_z_Wincyj( &mod_rgb, &mod_img, u_rgb, u_img);
 }
 
 void Wincyj::on_pushButton_Podglad_RGB_clicked()
@@ -104,4 +104,11 @@ void Wincyj::on_pushButton_dolnoprzepustowe_clicked()
     widget_rozmycie = new rozmycie(this);
     widget_rozmycie->show();
     widget_rozmycie->zmienne_z_Wincyj(&mod_rgb, &mod_img, u_rgb, u_img);
+}
+
+void Wincyj::on_pushButton_Sobel_Grey_clicked()
+{
+    widget_grey = new grey(this);
+    widget_grey->show();
+    widget_grey->zmienne_z_Wincyj(&mod_img, &mod_rgb);
 }

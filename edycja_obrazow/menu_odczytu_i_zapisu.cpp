@@ -45,7 +45,7 @@ bool menu_odczytu_i_zapisu:: Write_RGB_file(const char* name, IMG rgb)
     if (f.is_open() == 0)  return 0;
 
 
-    f << "P1\n" << rgb.szer << " " << rgb.wys << "\n";
+    f << "P3\n" << rgb.szer << " " << rgb.wys << "\n";
 
     for(int i = 0; i < rgb.wys; i++)
         for(int j=0; j < rgb.szer; j++)
@@ -68,7 +68,7 @@ bool menu_odczytu_i_zapisu:: Read_RGB_file(const char* name, IMG& rgb)
 
     std::string head;
     f >> head;
-    if(head != "P1")   return 0;
+    if(head != "P3")   return 0;
 
     f >> rgb.szer >> rgb.wys;
 
@@ -126,7 +126,7 @@ bool menu_odczytu_i_zapisu:: Write_RGB_bin_file(const char *name, IMG &rgb){
     FILE *f = fopen(name, "wb");
     if(f == NULL)    return 0;
 
-    char naglowek[] = "P4";
+    char naglowek[] = "P6";
     int wyn = fwrite(&naglowek , 3, 1,f);
 
     fwrite(&rgb.wys, sizeof rgb.wys, 1, f);
@@ -150,7 +150,7 @@ bool menu_odczytu_i_zapisu:: Read_RGB_from_bin_file(const char *name, IMG &rgb){
 
     fread(&naglowek , 3, 1,f);
 
-    if(strcmp(naglowek, "P4"))    return 0;
+    if(strcmp(naglowek, "P6"))    return 0;
 
     int wys,szer;
 

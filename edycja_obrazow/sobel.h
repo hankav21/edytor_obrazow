@@ -19,7 +19,7 @@ public:
     ~Sobel();
 
     //fun do kom
-    bool zmienne_z_Wincyj(MASK* l_mask, IMG* l_rgb, QImage* l_img, IMG* lu_rgb, QImage* lu_img);
+    bool zmienne_z_Wincyj( IMG* l_rgb, QImage* l_img, IMG* lu_rgb, QImage* lu_img);
     void aktualizuj_zmienne_z_Wincyj();
 
 private slots:
@@ -31,9 +31,17 @@ private slots:
     void on_pushButton_225_clicked();
     void on_pushButton_270_clicked();
     void on_pushButton_315_clicked();
-    void on_horizontalScrollBar_valueChanged(int value);
+    void on_horizontalScrollBar_valueChanged(int va);
 
     void on_pushButton_clicked();
+
+    void on_pushButton_Sobel_clicked();
+
+    void on_pushButton_Laplasjany_clicked();
+
+    void on_pushButton_Laplace_clicked();
+
+    void on_pushButton_Sobel_Gradien_Robertsa_clicked();
 
 private:
     Ui::Sobel *ui;
@@ -41,23 +49,27 @@ private:
 
 
     int v, m_v, m_j = -1, j = 1, z = 0;
-    int     *value = &v,
+    int     value,
             *minus_value = &m_v,
             *minus_jeden = &m_j,
             *jeden = &j,
             *zero = &z;
 
     KAT Filtr;
-    QLCDNumber* lcd[9];
-    //QPushButton* butt[8];
+    QLCDNumber* lcd[3][3];
+    QPushButton* butt, *kat;
 
-    MASK* wyn_mask;
+    MASK mask;
     IMG* wyn_rgb, *u_rgb;
     QImage* wyn_img, *u_img;
 
 
     //fun
     void aktualizuj();
+
+    bool sobel();
+    bool laplace();
+    bool prewitt();
 };
 
 #endif // SOBEL_H

@@ -35,7 +35,9 @@ SOURCES += main.cpp\
     rozdzielczosc.cpp \
     rozmycie.cpp \
     wlasna_maska.cpp \
-    autor.cpp
+    autor.cpp \
+    gornoprzepustowe.cpp \
+    grey.cpp
 
 HEADERS  += mainwindow.h \
     menu_odczytu_i_zapisu.h \
@@ -49,7 +51,9 @@ HEADERS  += mainwindow.h \
     rozdzielczosc.h \
     rozmycie.h \
     wlasna_maska.h \
-    autor.h
+    autor.h \
+    gornoprzepustowe.h \
+    grey.h
 
 FORMS    += mainwindow.ui \
     menu_odczytu_i_zapisu.ui \
@@ -62,4 +66,6 @@ FORMS    += mainwindow.ui \
     rozdzielczosc.ui \
     rozmycie.ui \
     wlasna_maska.ui \
-    autor.ui
+    autor.ui \
+    gornoprzepustowe.ui \
+    grey.ui

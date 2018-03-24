@@ -12,6 +12,19 @@ struct RGB{
     int b;
 };
 
+struct HSV{
+    int h,
+        s,
+        v;
+
+    HSV(){
+        h,s,v = 0;
+    }
+
+};
+
+
+
 //służy do tegożeby przekazywać wskaźniki w maskach, żeby prze wiele parametrów mogły być spokojnie edytowane - i mieć warości ujemne
 //trzeba utworzyć zmienne typu:
 //int value = wartosc;
@@ -356,9 +369,49 @@ struct IMG{
             }
         return wyn_rgb;
     }
+
+    IMG Grey_Srednia(IMG* l_rgb){
+        IMG wyn(l_rgb->szer, l_rgb->wys);
+        for(int i = 0; i< l_rgb->wys * l_rgb->szer; i++){
+            int srednia = (l_rgb->rgb[i].r + l_rgb->rgb[i].g +l_rgb->rgb[i].b)/3;
+             wyn.rgb[i].r = wyn.rgb[i].g = wyn.rgb[i].b = srednia;
+        }
+        return wyn;
+    }
+
+    IMG Grey_z_YUV(IMG* l_rgb){
+        IMG wyn(l_rgb->szer, l_rgb->wys);
+        for(int i = 0; i< l_rgb->wys * l_rgb->szer; i++){
+            int srednia = l_rgb->rgb[i].r * 0.229f       +     l_rgb->rgb[i].g * 0.587f       +     l_rgb->rgb[i].b * 0.114;
+             wyn.rgb[i].r = wyn.rgb[i].g = wyn.rgb[i].b = srednia;
+        }
+        return wyn;
+
+    }
 };
 
+struct IMG_HSV{
+    int szer, wys;
+    std::vector<HSV> hsv;
 
+    IMG_HSV(){
+        szer, wys = 0;
+    }
+
+
+    IMG_HSV(IMG rgb){
+        szer = rgb.szer;
+        wys = rgb.wys;
+        hsv.resize(szer * wys);
+        for(int i = 0; i < wys; i++){
+            for(int j = 0; j < szer; j++){
+                hsv[i * szer + j].h = 1;//rgb.rgb[i * szer + j].r
+                hsv[i * szer + j].s = 1;//rgb.rgb[i * szer + j].r
+                hsv[i * szer + j].v = 1;//rgb.rgb[i * szer + j].r
+            }
+        }
+    }
+};
 
 
 
