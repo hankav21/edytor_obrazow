@@ -1,10 +1,12 @@
 #ifndef SOBEL_H
 #define SOBEL_H
 
+#include "klasy_miedzyplikowe.h"
+
 #include <QDockWidget>
 #include <QLCDNumber>
 #include <QPushButton>
-#include "klasy_miedzyplikowe.h"
+
 
 namespace Ui {
 class Sobel;

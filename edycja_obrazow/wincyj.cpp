@@ -112,3 +112,9 @@ void Wincyj::on_pushButton_Sobel_Grey_clicked()
     widget_grey->show();
     widget_grey->zmienne_z_Wincyj(&mod_img, &mod_rgb);
 }
+
+void Wincyj::on_pushButton_HSV_clicked()
+{
+    widget_hsv = new hsv(this);
+    widget_hsv->show();
+}

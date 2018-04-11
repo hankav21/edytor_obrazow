@@ -19,8 +19,8 @@ void wytnij::paintEvent(QPaintEvent *event)
 
 
     //tryb podglądu, gdzie widzimy prostokąt pokazujący obszar który zostawimy
-    int skalaX = (width())/mod_rgb->szer,
-        skalaY = (height()-30)/mod_rgb->wys;
+    float skalaX = (width() -10)/(mod_rgb->szer * 1.0f),
+        skalaY =   (height()-30 -10)/(mod_rgb->wys * 1.0f);
 
     QRectF target(
                     0,                //poziomo

@@ -37,7 +37,7 @@ private:
 
     QImage* mod_img;
     IMG* mod_rgb;
-    int X,Y,Wys, Szer;
+    int X,Y,Wys, Szer;  //warotsci pobierane od użytkownika
 
     //fun
     void zatwierdz();

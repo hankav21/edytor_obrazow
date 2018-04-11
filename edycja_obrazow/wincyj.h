@@ -13,6 +13,7 @@
 #include "wlasna_maska.h"
 #include "rozmycie.h"
 #include "grey.h"
+#include "hsv.h"
 
 #include <QDebug>
 
@@ -59,6 +60,8 @@ private slots:
 
     void on_pushButton_Sobel_Grey_clicked();
 
+    void on_pushButton_HSV_clicked();
+
 private:
     Ui::Wincyj *ui;
 
@@ -72,6 +75,7 @@ private:
     wlasna_maska* widget_wlasna_maska;
     rozmycie* widget_rozmycie;
     grey* widget_grey;
+    hsv* widget_hsv;
 
     bool aktualizuj;
 

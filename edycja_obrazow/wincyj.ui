@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>162</width>
-    <height>300</height>
+    <height>333</height>
    </rect>
   </property>
   <property name="floating">
@@ -105,7 +105,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>250</y>
+      <y>280</y>
       <width>141</width>
       <height>23</height>
      </rect>
@@ -118,7 +118,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>220</y>
+      <y>250</y>
       <width>141</width>
       <height>23</height>
      </rect>
@@ -164,6 +164,19 @@
     </property>
     <property name="text">
      <string>Odcienie szarości</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_HSV">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>220</y>
+      <width>141</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>HSV</string>
     </property>
    </widget>
   </widget>

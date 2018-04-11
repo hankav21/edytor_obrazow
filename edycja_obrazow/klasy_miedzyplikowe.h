@@ -10,6 +10,36 @@ struct RGB{
     int r;
     int g;
     int b;
+
+    RGB(){
+        r,g,b = 0;
+    }
+
+    RGB(int lr, int lg, int lb){
+        r = lr;
+        g = lg;
+        b = lb;
+    }
+
+    RGB Grey_Srednia(RGB* l_rgb){
+        RGB wyn_rgb;
+
+        int srednia = (l_rgb->r + l_rgb->g +l_rgb->b)/3;
+             wyn_rgb.r = wyn_rgb.g = wyn_rgb.b = srednia;
+
+        return wyn_rgb;
+    }
+
+    RGB Grey_z_YUV(RGB* l_rgb){
+        RGB wyn;
+
+        int srednia = l_rgb->r * 0.229f       +     l_rgb->g * 0.587f       +     l_rgb->b * 0.114;
+         wyn.r = wyn.g = wyn.b = srednia;
+
+        return wyn;
+    }
+
+
 };
 
 struct HSV{
@@ -21,8 +51,111 @@ struct HSV{
         h,s,v = 0;
     }
 
-};
+    HSV(int lh, int ls, int lv){
+       h = lh;
+       s = ls;
+       v = lv;
+    }
 
+    bool operator== (const HSV* hsv){
+        if(hsv->h == this->h
+           && hsv->s == this->s
+           && hsv->v == this->v)
+            return 1;
+        return 0;
+    }
+
+    RGB get_rgb_from_hsv(const HSV* hsv){
+        RGB rgb;
+
+        // ! O <= H <= 360, 0<=S<=1, 0<=V<=1
+        int c = hsv->v * hsv->s,
+            x = c * (1 - abs((hsv->h / 60)%2 - 1)),
+            m = hsv->v - c;
+
+        //R', G', B'
+        if(hsv->h < 60){
+            rgb.r = c;
+            rgb.g = x;
+            rgb.b = 0;
+        }else if(hsv->h < 120){
+            rgb.r = x;
+            rgb.g = c;
+            rgb.b = 0;
+        }else if(hsv->h < 180){
+            rgb.r = 0;
+            rgb.g = c;
+            rgb.b = x;
+        }else if(hsv->h < 240){
+            rgb.r = 0;
+            rgb.g = x;
+            rgb.b = c;
+        }else if(hsv->h < 300){
+            rgb.r = x;
+            rgb.g = 0;
+            rgb.b = c;
+        }else{
+            rgb.r = c;
+            rgb.g = 0;
+            rgb.b = x;
+        }
+
+        //(R,G,B) = ((R'+m)*255, (G'+m)* ...
+        rgb.r += m;
+        rgb.g += m;
+        rgb.b += m;
+
+        rgb.r *= 255;
+        rgb.g *= 255;
+        rgb.b *= 255;
+
+        return rgb;
+    }
+
+    HSV get_hsv_from_rgb(const RGB* rgb){
+        //R' = R/255, G' = ...
+        HSV hsv;
+
+        int Rp = rgb->r / 255,
+            Gp = rgb->g / 255,
+            Bp = rgb->b / 255;
+        //Cmax = max(R', G', B')
+        int *Cmax = &Rp,
+            *Cmin = &Rp;
+
+        if(*Cmax < Gp)   Cmax = &Gp;
+        if(*Cmax < Bp)   Cmax = &Bp;
+
+        //Cmin = min (R', G', B')
+        if(*Cmin > Gp)   Cmin = &Gp;
+        if(*Cmin > Bp)   Cmin = &Bp;
+
+        //delta = Cmax - Cmin
+        int delta = *Cmax - *Cmin;
+
+        //H
+        if( delta == 0)
+            hsv.h = 0;
+        else if(Cmax == &Rp)
+                hsv.h = 60 * ((Gp - Bp)/delta)%6;
+             else if(Cmax == &Gp)
+                     hsv.h = 60 * ((Bp - Rp)/delta) + 2;
+                  else //if(Cmax == &Gp)
+                        hsv.h = 60 * ((Rp - Gp)/delta) + 4;
+
+        //S
+        if(*Cmax == 0)
+            hsv.s = 0;
+        else
+            hsv.s = delta/(*Cmax);
+
+        //V
+        hsv.v = *Cmax;
+
+        return hsv;
+    }
+
+};
 
 
 //służy do tegożeby przekazywać wskaźniki w maskach, żeby prze wiele parametrów mogły być spokojnie edytowane - i mieć warości ujemne
@@ -394,23 +527,114 @@ struct IMG_HSV{
     int szer, wys;
     std::vector<HSV> hsv;
 
+
     IMG_HSV(){
         szer, wys = 0;
+        hsv.resize(0);
     }
 
 
-    IMG_HSV(IMG rgb){
-        szer = rgb.szer;
-        wys = rgb.wys;
+
+    IMG_HSV(const IMG* rgb){
+        szer = rgb->szer;
+        wys = rgb->wys;
         hsv.resize(szer * wys);
+
         for(int i = 0; i < wys; i++){
             for(int j = 0; j < szer; j++){
-                hsv[i * szer + j].h = 1;//rgb.rgb[i * szer + j].r
-                hsv[i * szer + j].s = 1;//rgb.rgb[i * szer + j].r
-                hsv[i * szer + j].v = 1;//rgb.rgb[i * szer + j].r
+
+                //R' = R/255
+                int Rp = rgb->rgb[i * szer + j].r / 255,
+                    Gp = rgb->rgb[i * szer + j].g / 255,
+                    Bp = rgb->rgb[i * szer + j].b / 255;
+                //Cmax = max(R', G', B')
+                int *Cmax = &Rp,
+                    *Cmin = &Rp;
+
+                if(*Cmax < Gp)   Cmax = &Gp;
+                if(*Cmax < Bp)   Cmax = &Bp;
+
+                //Cmin = min (R', G', B')
+                if(*Cmin > Gp)   Cmin = &Gp;
+                if(*Cmin > Bp)   Cmin = &Bp;
+
+                //delta = Cmax - Cmin
+                int delta = *Cmax - *Cmin;
+
+                //H
+                if( delta == 0)
+                    hsv[i * szer + j].h = 0;
+                else if(Cmax == &Rp)
+                        hsv[i * szer + j].h = 60 * ((Gp - Bp)/delta)%6;
+                     else if(Cmax == &Gp)
+                             hsv[i * szer + j].h = 60 * ((Bp - Rp)/delta) + 2;
+                          else //if(Cmax == &Gp)
+                                hsv[i * szer + j].h = 60 * ((Rp - Gp)/delta) + 4;
+
+                //S
+                if(*Cmax == 0)
+                    hsv[i * szer + j].s = 0;
+                else
+                    hsv[i * szer + j].s = delta/(*Cmax);
+
+                //V
+                hsv[i * szer + j].v = *Cmax;
             }
+
         }
     }
+
+
+    IMG HSV_to_RGB(const IMG_HSV* hsv){
+        IMG rgb(hsv->szer, hsv->wys);
+
+        for(int i = 0; i < wys; i++){
+            for(int j = 0; j < szer; j++){
+                // ! O <= H <= 360, 0<=S<=1, 0<=V<=1
+                int c = hsv->hsv[i * szer + j].v * hsv->hsv[i * szer + j].s,
+                    x = c * (1 - abs((hsv->hsv[i * szer + j].h / 60)%2 - 1)),
+                    m = hsv->hsv[i * szer + j].v - c;
+
+                //R', G', B'
+                if(hsv->hsv[i * szer + j].h < 60){
+                    rgb.rgb[i * szer + j].r = c;
+                    rgb.rgb[i * szer + j].g = x;
+                    rgb.rgb[i * szer + j].b = 0;
+                }else if(hsv->hsv[i * szer + j].h < 120){
+                    rgb.rgb[i * szer + j].r = x;
+                    rgb.rgb[i * szer + j].g = c;
+                    rgb.rgb[i * szer + j].b = 0;
+                }else if(hsv->hsv[i * szer + j].h < 180){
+                    rgb.rgb[i * szer + j].r = 0;
+                    rgb.rgb[i * szer + j].g = c;
+                    rgb.rgb[i * szer + j].b = x;
+                }else if(hsv->hsv[i * szer + j].h < 240){
+                    rgb.rgb[i * szer + j].r = 0;
+                    rgb.rgb[i * szer + j].g = x;
+                    rgb.rgb[i * szer + j].b = c;
+                }else if(hsv->hsv[i * szer + j].h < 300){
+                    rgb.rgb[i * szer + j].r = x;
+                    rgb.rgb[i * szer + j].g = 0;
+                    rgb.rgb[i * szer + j].b = c;
+                }else{
+                    rgb.rgb[i * szer + j].r = c;
+                    rgb.rgb[i * szer + j].g = 0;
+                    rgb.rgb[i * szer + j].b = x;
+                }
+
+                //(R,G,B) = ((R'+m)*255, (G'+m)* ...
+                rgb.rgb[i * szer + j].r += m;
+                rgb.rgb[i * szer + j].g += m;
+                rgb.rgb[i * szer + j].b += m;
+
+                rgb.rgb[i * szer + j].r *= 255;
+                rgb.rgb[i * szer + j].g *= 255;
+                rgb.rgb[i * szer + j].b *= 255;
+            }
+        }
+        return rgb;
+    }
+
 };
 
 

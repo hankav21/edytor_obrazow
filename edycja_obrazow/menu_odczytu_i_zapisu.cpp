@@ -314,7 +314,7 @@ void menu_odczytu_i_zapisu::on_pushButton_Zapisz_clicked()
             ui->label_komunikat->setText("blad zapisu rgb.txt");
     }else if(ui->radioButton_rgb->isChecked() && ui->radioButton_jpg->isChecked()){
         //rgb.jpg
-        if(!((*U_img).save(path) && spr_czy_img((path.toStdString()).c_str()) ));
+        if(!((*U_img).save(path) && spr_czy_img((path.toStdString()).c_str()) ))
             ui->label_komunikat->setText("blad zapisu rgb.jpg");
     }else if(ui->radioButton_bin->isChecked() && ui->radioButton_rgb->isChecked()){
         //rgb.bin

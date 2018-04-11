@@ -1,6 +1,8 @@
 #ifndef MENU_ODCZYTU_I_ZAPISU_H
 #define MENU_ODCZYTU_I_ZAPISU_H
 
+#include "klasy_miedzyplikowe.h"
+
 #include <QDockWidget>
 #include <QFileDialog>
 #include <QDialog>
@@ -16,7 +18,7 @@
 #include <fstream>
 #include <cstdio>
 
-#include "klasy_miedzyplikowe.h"
+
 
 
 namespace Ui {

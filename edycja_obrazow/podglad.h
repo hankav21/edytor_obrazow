@@ -1,10 +1,12 @@
 #ifndef PODGLAD_H
 #define PODGLAD_H
 
+#include "klasy_miedzyplikowe.h"
+
 #include <QDockWidget>
 #include <QPainter>
 
-#include "klasy_miedzyplikowe.h"
+
 
 namespace Ui {
 class Podglad;

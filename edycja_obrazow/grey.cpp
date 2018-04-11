@@ -41,6 +41,7 @@ bool grey::zmienne_z_Wincyj(QImage* l_u_img, IMG* l_u_rgb){
     return 1;
 }
 
+//interfejs
 void grey::on_pushButton_srednie_clicked()
 {
     mod_rgb = mod_rgb.Grey_Srednia(rgb);
